@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오늘의 집 클론코딩</title>
+    <link rel="stylesheet" href="./task.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="header_container">
+        <div class="icon_container">
+          <a href="https://ohou.se/">
+            <img
+              class="icon_img"
+              src="data:image/png;base64,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"
+          /></a>
+        </div>
+        <div class="header_ct1">
+          <ul class="ct1_ul">
+            <li class="ct1_li_1"><a href="#">커뮤니티</a></li>
+            <li class="ct1_li"><a href="#">쇼핑</a></li>
+            <li class="ct1_li"><a href="#">인테리어/생활</a></li>
+          </ul>
+        </div>
+        <div class="search-bar">
+          <input class="search-bar_input" type="text" placeholder="통합검색" />
+        </div>
+        <div class="header_cart">
+          <a class="header_cart" href="https://ohou.se/cart">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEX///8jHyAgHB0AAAAZExVqaGn29fUwLS7z8vMnIyMaFRZiYGEeGhs/PT0dGBkGAAAMAQW5uLjs7OylpKQSCw1EQULi4eG8u7s6NziSkJEsKCnW1dV+fX3l5eXe3d2VlJTIx8dSUFGura1vbm5aV1jHxsaIh4eTkZJ3dXZnZGWenJ1LSEmaWRz8AAAHGklEQVR4nO2dgXqqPAyGpUWmqMAQPc7NbU7n5rz/+/unnp05E5Dn52vKfPJeADSUtsnXNO10FEVRFEVRFEVRFEVRFEVRFEVRWk4+HkxGDMvNve+mQYjebRYPGZKksJNH381rznReBOXE9sV3A5uSz+MKA4PA2D++m9iQdVUPHkzMct9tbMQfe8HAICjefTeyEdvwooXG/OZOjApz0cLgV4/E6eWf9PM33fhuZgPu61g4nPhuZgNq9WFgf/FAjLIa4zCwt77b2YDu5bn0cyA++G5mA17r/KbG+G5mE9Z1OtEufDezAbmp9ksPpL95IHYWN9lFC8OV71Y2orexaTw0J9CBOPPdyIbk4+3s5ps5NbG4gkD4FDq/pr8+Dv7JJLmygUh4IlHxcBb5bhQUxh+31zUQIzqdZmPfjcKyIo7OtQ3EcUpWxMR3m7A8EgsDex3y9xfRaHjtA/GdDEQzW3X9sHr4uO/BLbyl64UJfVFktj94BVu4uKSEC2NiOwdrmjMyEH0ztGuoIHbXsk7cExrkr1pLv5FmCBX92mghdqtvXUO+kccAI4CPy+qND5IRzMLHVv6mQZA+oSyMburo/fKYEKbd0giqHeD2+l5ofNEKTIGycNrCNf8AblEcEcWtHYSwzImHlnai6aMsbKXjtqdAeeA9zkIjD2lDChNUqJQRBPO+NHQXJX1GWUilbzPLI2E6G9IKnIWc9C2uuDE5Tbi/tBOShxcfsIfXhAnFsyns6TRRIx7AHl6PPCBfGefUdDpjGkGlwntQT7QJCTBFi8mYsmhVr5oeHSjQkcJI38JZfHdMHA7d6GOk7znw8ReJGKcj2SHfwEjfoslDnKaJTbJb0GEgmbPQi+koxHYhF0GFXewbqnhjRiE6PYu6TOYG+4YKenQtDBJ07tIzk1oj5rixEyk855xamEk5bj0my36I/4OWZCCKOW5sF+KTJKn0bQx+Q5YjskwX4hTvf3ARlIzj5n4tPBLREFvGcWOCCqjP/Q2VvoGbIxUwQYWjMwOM9C1x/CJPBNbCI4z0LZH1LbMWHvGSbBqlzETqKhWbSt8Cxy84j9TZyR1G+nbuuHHujJuJdE/OiF2uc9yk1sK/0AgqXjt72QFuLXThznzBSN99t+uF6CjssBGUfXb3Ol5gczaRHqAzt1vHTSioOGFLkoeSpcPXsQKb22NJjPTt0nETnkj3MMlDDt/IeqRgge2ciCab4rIFCBICG4GRvkNX7xIR2Aic9O3qlJBkUPENI327ctyEBDaCnOMmvxYeYaTvwMlWKRcXugsqThBz3DyshUcYN6O4c/AeOYGNsCMD0YnjJiewEZis7wK/VZoz+4Vug4pvOOkb/239rIVHIjpA8AVP2IlUrNYBlb7xW6XeJtIDnPSNS746wApsjoOKE6bUQrTj5rcLOekb7LhJC2wEJuvbQl8gLbARmPKDUMfNV1DxTc4km74Bn+8rqDiBZvEhJzpOYBMdhR1W+k5wjhs7kQrXa+QiKFgTcubQgVBQcQITQcEcN+8T6YEBkb5hA6XHdaF89S1G+k7WAwg75tCxh6qp3LnZJIbAnJKTigtPiWaS52a91Nuk0rc75CfSPYz07Qw/JVMXcn3opws/Iyixgie+qt5S6dsRPibSA2LnZr0VLo6Ejuh7cGe+oNK3EzzWnpYpeCIosBFqlXBvjNfy4VRxw+NtIj3AhMFw3KaUXWTj3ETruwD8hjnoAcR4N7DTeSlsOLxc6+H/MIxt0YqSzC+D09rYQEaDVth3oOeC6yrGrCiKoiiKoiiKoijtJlo8Pk6dHc3rTV0+vQ6321lorQ12Lq4kz8frm8LabL7+8HUZ4TjYq2x7yS8p7A5sY/RQpMdUfRNn6cpHRy5GP5TS2ELPAj+nP7IvCw8XvT2H51k9FpgjPD7XmQ32A9bgPqR7MgXMxBdGSLcujh2V0+tzm04pSIHnN+1kN9m6fI4CaJtozuZ4mEBwuinbGcWkvdA70I5kgkOx9F5kRCcyR8X/dqJcwVsug/cIotxQ+a6rFVsyyvNoEOWGyvOQ4m3zp9fjrTwXCnDJLM09/vf9nJ36P6ci7bL5QCwdhvunSw3EigvYm5cYZKr6fT9dar2ouHIGYGHFlT1Wpghl5V0egLJfFTk62LNjFTBZ+l8AbtMo/0PkTnbdl+YkIvKXypPlBMujl053iONrj6UWCmZHcZUAjm1A6A1ll9hJJrhx58gPXQgJn8rcNtHw6YVtBCq+WbFzdei4st8ZXe4/RR1NiubMf2oclKWoZEkPWFrYcfVpn5aEk7/SpnumpcQZMLaZjs7+kWLu4ZbscXHSjcZOoE2I3u3Jwh9bL4JpJ99YW8TDJAkzO4fPc/fbz6cn+6endvmMfnptXu/Wk9GuO3ZSy6x3+7CcTJbvt153LhRFURRFURRFURRFURRFURRFURD8B1vbf1aV48w0AAAAAElFTkSuQmCC"
+              class="cart_img"
+            />
+          </a>
+        </div>
+        <nav class="sign_container">
+          <a href="#" class="sign">로그인</a>
+          <a href="#" class="signup">회원가입</a>
+          <a href="#" class="ct_center">고객센터</a>
+        </nav>
+        <div class="write_container">
+          <button type="button" class="header_write">
+            <span class="ctwrite">글쓰기</span>
+            <span class="type_down">&#8897;</span>
+          </button>
+        </div>
+      </nav>
+      <nav class="li_nav">
+        <ul class="nav_ul">
+          <li class="nav_li"><a href="#">홈</a></li>
+          <li class="nav_li"><a href="#">추천</a></li>
+          <li class="nav_li"><a href="#">#채널</a></li>
+          <li class="nav_li"><a href="#">집들이</a></li>
+          <li class="nav_li"><a href="#">집사진</a></li>
+          <li class="nav_li"><a href="#">3D인테리어</a></li>
+          <li class="nav_li"><a href="#">살림수납</a></li>
+          <li class="nav_li"><a href="#">콜렉터블</a></li>
+          <li class="nav_li"><a href="#">홈스토랑</a></li>
+          <li class="nav_li"><a href="#">핫플레이스</a></li>
+          <li class="nav_li"><a href="#">육아</a></li>
+        </ul>
+        <div class="li_nav_div">
+          <button type="button" class="hidden_button">&#8897;</button>
+        </div>
+        <div class="hidden_container">
+          <ul class="hidden_ul">
+            <li class="hidden_li"><a href="#">육아</a></li>
+            <li class="hidden_li"><a href="#">플랜테리어</a></li>
+            <li class="hidden_li"><a href="#">반려동물</a></li>
+            <li class="hidden_li"><a href="#">캠핑</a></li>
+            <li class="hidden_li"><a href="#">취미</a></li>
+            <li class="hidden_li"><a href="#">이벤트</a></li>
+          </ul>
+        </div>
+        <div class="nav_best_container">
+          <ul class="best_ul">
+            <li class="best_li"><strong>1</strong>일광전구</li>
+            <li class="best_li"><strong>2</strong>작은방꾸미기</li>
+            <li class="best_li"><strong>3</strong>모달 이불</li>
+            <li class="best_li"><strong>4</strong>일광전구 스노우</li>
+            <li class="best_li"><strong>5</strong>이동식 행거</li>
+            <li class="best_li"><strong>6</strong>등쿠션</li>
+            <li class="best_li"><strong>7</strong>컵누들</li>
+            <li class="best_li"><strong>8</strong>스마트티비</li>
+            <li class="best_li"><strong>9</strong>현관 데코타일</li>
+            <li class="best_li"><strong>10</strong>미드센츄리</li>
+          </ul>
+          <span>&#8897;</span>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <aside class="aside_container">
+        <action class="aside_action_1">
+          <div class="banner_side">
+            <a
+              href="https://contents.ohou.se/projects/91415?affect_type=Home&affect_id=0"
+              class="aside_img"
+            >
+              <img
+                src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/164965165504198815.png?w=1275&h=764.6989374262101&c=c"
+              />
+            </a>
+          </div>
+          <div class="banner_wrap">
+            <ul class="banner_ul">
+              <li>
+                <a
+                  href="https://events.ohou.se/promotions/festa-benefit?outbound=false&click_action_type=webview"
+                >
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/banners/home_banner/170738409156598111.png?w=1275"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://ohou.se/exhibitions/12140?affect_type=Home&affect_id=0"
+                >
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/banners/home_banner/170807260675016765.png?w=384"
+                /></a>
+              </li>
+              <li>
+                <a href="https://ohou.se/ogarden?affect_type=Home&affect_id=0">
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/banners/home_banner/170738184326479149.png?w=384"
+                  />
+                </a>
+              </li>
+            </ul>
+            <div class="prev">&lt</div>
+            <div class="next">&gt</div>
+          </div>
+        </action>
+        <action class="aside_action_2">
+          <div class="cat_container">
+            <ul class="cat_ul">
+              <li>
+                <a
+                  href="https://events.ohou.se/promotions/festa-sale?outbound=false&click_action_type=webview&affect_type=Home&affect_id=0"
+                >
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/shortcut/home_feed_shortcut_sets/170737398202920977.png?w=384"
+                  />빅세일</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://store.ohou.se/today_deals?affect_type=Home&affect_id=0"
+                >
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/shortcut/home_feed_shortcut_sets/167198007152582471.png?w=384"
+                  />오늘의딜</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://contents.ohou.se/topics/living?affect_type=Home&affect_id=0"
+                >
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/shortcut/home_feed_shortcut_sets/169880736853477508.png?w=384"
+                  />수납꿀팁</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ohou.se/competitions/1002?affect_type=Home&affect_id=0"
+                >
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/shortcut/home_feed_shortcut_sets/170184318298899959.png?w=384"
+                  />행운출첵</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ohou.se/projects?writer=self&affect_type=Home&affect_id=0"
+                >
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/shortcut/home_feed_shortcut_sets/167198010271968429.png?w=384"
+                  />집들이</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://contents.ohou.se/topics/recommend?affect_type=Home&affect_id=0"
+                >
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/shortcut/home_feed_shortcut_sets/169655628839725014.png?w=384"
+                  />추천콘텐츠</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://store.ohou.se/exhibitions/10795?affect_type=Home&affect_id=0"
+                >
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/shortcut/home_feed_shortcut_sets/170358029394034307.png?w=384"
+                  />장보기</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ohou.se/exhibitions/10017?affect_type=Home&affect_id=0"
+                >
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/shortcut/home_feed_shortcut_sets/167198012024333402.png?w=384"
+                  />빠른배송</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://o2o.ohou.se/remodeling/home/consultation?affect_type=HomeShortcut&affect_type=Home&affect_id=0"
+                >
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/shortcut/home_feed_shortcut_sets/167198022841390557.png?w=384"
+                  />리모델링</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ohou.se/experts/moving?affect_type=Home&affect_id=0"
+                >
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/shortcut/home_feed_shortcut_sets/167198021046015480.png?w=384"
+                  />쉬운이사</a
+                >
+              </li>
+            </ul>
+          </div>
+        </action>
+        <action class="aside_action_3">
+          <div class="action_3_container">
+            <div class="action_3_title_container">
+              <div class="action_3_title">
+                <h3 class="aside_title">이런 사진 찾고 있나요?</h3>
+                <p>좋아하실 만한 인테리어 콘텐츠를 추천해드려요</p>
+              </div>
+              <div class="plus_div">
+                <p class="plus_p">더보기</p>
+              </div>
+            </div>
+            <div class="action_3_list_container">
+              <ul class="action_3_list_ul">
+                <li class="action_3_list">
+                  <div class="photo_1">
+                    <a
+                      href="https://contents.ohou.se/contents/card_collections/23938355?affect_type=Home&affect_id=0"
+                      ><img src=""
+                    /></a>
+                  </div>
+                  <div class="photo_user_container">
+                    <img src="" />
+                    <span>87.2.03</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </action>
+        <action class="aside_action_4">
+          <div class="action_4_container">
+            <div class="action_4_title">
+              <h3 class="aside_title">오늘의 기획전</h3>
+            </div>
+            <div class="action_ul_container">
+              <ul class="action_4_ul">
+                <li class="action_4_li">
+                  <div class="action_3_li_1">
+                    <div class="action_3_img">
+                      <img
+                        src="https://image.ohou.se/i/bucketplace-v2-development/uploads/exhibitions/cover_image/168144815741309775.png?w=360&h=240&c=c"
+                        alt=""
+                      />
+                    </div>
+                    <div class="action_p_container">
+                      <p class="action_4_li_p1">
+                        전시, 반품, 스크래치 득템의 기회!
+                      </p>
+                      <p class="action_4_li_p2">빠른 품절! 리퍼마켓 ~90%</p>
+                    </div>
+                    <a
+                      href="https://ohou.se/exhibitions/10019?affect_type=Home&affect_id=0"
+                    ></a>
+                  </div>
+                </li>
+                <li class="action_4_li">
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/exhibitions/cover_image/170774961686196069.png?w=360&h=240&c=c"
+                    alt=""
+                  />
+                  <a
+                    href="https://ohou.se/exhibitions/10795?affect_type=Home&affect_id=0"
+                  ></a>
+                  <div class="action_p_container">
+                    <p class="action_4_li_p1">
+                      전상품 무료배송, 요일마다 바뀌는 파격특가 장보...
+                    </p>
+                    <p class="action_4_li_p2">
+                      물가안정 초특강 장보기! 오픈런-딜
+                    </p>
+                  </div>
+                </li>
+                <li class="action_4_li">
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/exhibitions/cover_image/168388854027804620.jpg?w=360&h=240&c=c"
+                    alt=""
+                  />
+                  <a
+                    href="https://ohou.se/exhibitions/10008?affect_type=Home&affect_id=0"
+                  ></a>
+                  <div class="action_p_container">
+                    <p class="action_4_li_p1">
+                      오늘의 집 큐레이션 편집샵 오!굿즈
+                    </p>
+                    <p class="action_4_li_p2">오직 여기서만, O!Goods</p>
+                  </div>
+                </li>
+                <li class="action_4_li">
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/exhibitions/cover_image/169416553917270384.png?w=360&h=240&c=c"
+                    alt=""
+                  />
+                  <a
+                    href="https://ohou.se/exhibitions/11471?affect_type=Home&affect_id=0"
+                  ></a>
+                  <div class="action_p_container">
+                    <p class="action_4_li_p1">최대 25만원 SAVE</p>
+                    <p class="action_4_li_p2">0원한 특급패스, 오늘의집 배송!</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </action>
+        <action class="aside_action_5">
+          <div class="action_5_container">
+            <div class="action_4_title">
+              <h3 class="aside_title">베스트</h3>
+            </div>
+            <div class="best_button_container">
+              <ul class="best_button_ul">
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    전체
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    새학기 준비
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    가구
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    패브릭
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    가전·디지털
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    주방용품
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    식품
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    데코·식물
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    조명
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    수납·정리
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    생활용품
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    생필품
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    유아·아동
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    반려동물
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    캠핑·레저
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    공구·DIY
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    인테리어시공
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    렌탈·구독
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    장보기
+                  </button>
+                </li>
+                <li class="best_button_li">
+                  <button type="button" href="#" class="best_button">
+                    혼수·신혼
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="">
+              <ul>
+                <li>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/162303132447303472.jpeg?gif=1&w=850&h=850&c=c&webp=1"
+                  />
+
+                  <p></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </action>
+      </aside>
+    </main>
+    <footer>
+      <div class="footer_container">
+        <div class="center_container">
+          <h4 class="center_h4">고객센터</h4>
+          <div class="call_time1">
+            <span class="center_call">1670-0876</span>
+            <span class="center_time1">09:00~18:00</span>
+          </div>
+          <div class="center_ul_div">
+            <ul class="center_ul">
+              <li class="center_ul_li">평일: 전체 문의 상담</li>
+              <li class="center_ul_li">
+                토요일, 공휴일: 오늘의집 직접배송, 이사/시공/제품설치 문의 상담
+              </li>
+              <li class="center_ul_li">일요일: 휴무</li>
+            </ul>
+          </div>
+          <span class="center_span">카톡 상담(평일 09:00~18:00)</span>
+          <span class="center_span">이메일 문의</span>
+        </div>
+        <div class="site_list_container">
+          <ul class="site_list_ul">
+            <li class="site_list"><a href="#">회사소개</a></li>
+            <li class="site_list"><a href="#">채용정보</a></li>
+            <li class="site_list"><a href="#">이용약관</a></li>
+            <li class="site_list">
+              <a href="#"><strong>개인정보 처리방침</strong></a>
+            </li>
+            <li class="site_list"><a href="#">공지사항</a></li>
+            <li class="site_list"><a href="#">안전거래센터</a></li>
+            <li class="site_list"><a href="#">입점신청</a></li>
+            <li class="site_list"><a href="#">제휴/광고 문의</a></li>
+            <li class="site_list"><a href="#">시공파트너 안내</a></li>
+            <li class="site_list"><a href="#">상품광고 소개</a></li>
+            <li class="site_list"><a href="#">고객의 소리</a></li>
+          </ul>
+        </div>
+        <div class="footer_last"></div>
+      </div>
+    </footer>
+  </body>
+</html>
