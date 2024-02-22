@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>오늘의 집 클론코딩</title>
-    <link rel="stylesheet" href="./task.css" />
+    <link rel="stylesheet" href="../css/task.css" />
+    <script defer src="../javascript/task.js"></script>
   </head>
   <body>
     <header>
       <nav class="header_container">
+        <div class="header_container_1">
         <div class="icon_container">
           <a href="https://ohou.se/">
             <img
@@ -24,14 +26,23 @@
           </ul>
         </div>
         <div class="search-bar">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" stroke="currentColor" fill="none" >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <circle cx="10" cy="10" r="7" />
+            <line x1="21" y1="21" x2="15" y2="15" />
+          </svg>
           <input class="search-bar_input" type="text" placeholder="통합검색" />
         </div>
+        
         <div class="header_cart">
-          <a class="header_cart" href="https://ohou.se/cart">
-            <img
-              src="data:image/png;base64,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"
-              class="cart_img"
-            />
+          <a class="header_cart_a" href="https://ohou.se/cart">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M17 17h-11v-14h-2" />
+              <path d="M6 5l14 1l-1 7h-13" />
+            </svg>
           </a>
         </div>
         <nav class="sign_container">
@@ -42,9 +53,15 @@
         <div class="write_container">
           <button type="button" class="header_write">
             <span class="ctwrite">글쓰기</span>
-            <span class="type_down">&#8897;</span>
+            <span class="ctwrite_down">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon_down_img">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M6 9l6 6l6 -6" />
+              </svg>
+            </span>
           </button>
         </div>
+      </div>
       </nav>
       <nav class="li_nav">
         <ul class="nav_ul">
@@ -61,7 +78,10 @@
           <li class="nav_li"><a href="#">육아</a></li>
         </ul>
         <div class="li_nav_div">
-          <button type="button" class="hidden_button">&#8897;</button>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M6 9l6 6l6 -6" />
+          </svg>
         </div>
         <div class="hidden_container">
           <ul class="hidden_ul">
@@ -86,7 +106,12 @@
             <li class="best_li"><strong>9</strong>현관 데코타일</li>
             <li class="best_li"><strong>10</strong>미드센츄리</li>
           </ul>
-          <span>&#8897;</span>
+          <div class="li_nav_div">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M6 9l6 6l6 -6" />
+            </svg>
+          </div>
         </div>
       </nav>
     </header>
@@ -445,12 +470,24 @@
             <div class="">
               <ul>
                 <li>
+                  <div class="best_photo_li_1th">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bookmark-filled" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M14 2a5 5 0 0 1 5 5v14a1 1 0 0 1 -1.555 .832l-5.445 -3.63l-5.444 3.63a1 1 0 0 1 -1.55 -.72l-.006 -.112v-14a5 5 0 0 1 5 -5h4z" stroke-width="0" fill="currentColor" />
+                  </svg>
                   <img
                     src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/162303132447303472.jpeg?gif=1&w=850&h=850&c=c&webp=1"
                   />
-
-                  <p></p>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bookmark" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M18 7v14l-6 -4l-6 4v-14a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4z" />
+                  </svg>
+                  <p>아엠홈</p>
+                  <span>[최대10%쿠폰+사은품][맞춤]비침없는 도톰 레이스/쉬폰커튼(나비주름/핀형/봉집)</span>
+                  
+                </div>
                 </li>
+                
               </ul>
             </div>
           </div>
@@ -494,7 +531,106 @@
             <li class="site_list"><a href="#">고객의 소리</a></li>
           </ul>
         </div>
-        <div class="footer_last"></div>
+        <div class="footer_last_container">
+          <div class="last_1_container">
+            <div class="last_1_cside">
+              <div class="cside">
+                <span class="cside_bar">|</span>(주)버킷플레이스
+              </div>
+              <div class="cside">
+                <span class="cside_bar">|</span>대표이사 이승재
+              </div>
+              <div class="cside">
+                <span class="cside_bar">|</span>
+                <address class="cside_address">서울 서초구 서초대로74길 4 삼성생명서초타워 25층, 27층</address>
+              </div>
+              <div class="cside">
+                <span class="cside_bar">|</span>
+                <a href="mailto:contact@bucketplace.net">contact@bucketplace.net</a>
+              </div>
+              <div class="cside">
+                <span class="cside_bar">|</span>
+                <span class="cside_bar">사업자등록번호 119-86-91245</span>
+                <a target="_blank" href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1198691245">사업자정보확인</a>
+              </div>
+              <div class="cside">
+                <span>통신판매업업신고번호 제2018-서울서초-0580호</span>
+              </div>
+            </div>
+          </div>
+          <div class="last_2_container">
+            <span class="last_2_span">
+              고객님이 현금결제한 금액에 대해 우리은행과 채무지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.
+            </span>
+            <a href="https://image.ohou.se/i/bucketplace-v2-development/uploads/static/images/167904458404594951.jpg?w=1440" class="last_2_a">서비스가입사실확인</a>
+          </div>
+          <div class="last_3_container">
+            <div class="last_3_1th">
+              <img src="https://assets.ohou.se/design-system/8f5b2c2e98ea1196.png" class="last_3_1th_img">
+              <div class="last_3_1th_content">
+                <span>오늘의 집 서비스 운영</span>
+                <br>"2021. 09. 08 ~ 2024. 09 .07"
+              </div>
+            </div>
+            <div class="last_3_2th">
+            <img src="https://assets.ohou.se/design-system/d5fb816a58bb6a06.png" class="last_3_2th_img">
+            </div>
+            <div class="last_3_3th">
+              <img src="https://assets.ohou.se/design-system/ad1cf869a6c58058.png" class="last_3_3th_img">
+            </div>
+          </div>
+          <div class="last_4_container">
+            <span class="last_4_span">
+              (주)버킷플레이스는 통신판매중개자로 거래 당사자가 아니므로, 판매자가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다. 단, (주)버킷플레이스가 판매자로 등록 판매한 상품은 판매자로서 책임을 부담합니다.
+            </span>
+          </div>
+          <div class="last_5_container">
+            <a href="https://www.youtube.com/channel/UCBKtitA1RwY7F32rCniV1dA" target="_blank" class="footer-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-youtube-filled" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                 <circle cx="12" cy="12" r="11" fill="currentColor"></circle>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M18 3a5 5 0 0 1 5 5v8a5 5 0 0 1 -5 5h-12a5 5 0 0 1 -5 -5v-8a5 5 0 0 1 5 -5zm-9 6v6a1 1 0 0 0 1.514 .857l5 -3a1 1 0 0 0 0 -1.714l-5 -3a1 1 0 0 0 -1.514 .857z" stroke-width="0" fill="currentColor" />
+              </svg></a>
+              
+              <a href="https://www.instagram.com/todayhouse" target="_blank" class="footer-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" fill="currentColor"></circle>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+                <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                <path d="M16.5 7.5l0 .01" />
+              </svg></a>
+              
+              <a href="https://www.facebook.com/interiortoday"  target="_blank" class="footer-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook-filled" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" fill="currentColor"></circle>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M18 2a1 1 0 0 1 .993 .883l.007 .117v4a1 1 0 0 1 -.883 .993l-.117 .007h-3v1h3a1 1 0 0 1 .991 1.131l-.02 .112l-1 4a1 1 0 0 1 -.858 .75l-.113 .007h-2v6a1 1 0 0 1 -.883 .993l-.117 .007h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-6h-2a1 1 0 0 1 -.993 -.883l-.007 -.117v-4a1 1 0 0 1 .883 -.993l.117 -.007h2v-1a6 6 0 0 1 5.775 -5.996l.225 -.004h3z" stroke-width="0" fill="currentColor" />
+              </svg></a>
+              
+              <a href="https://story.kakao.com/ch/bucketplace"  target="_blank" class="footer-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="css-8n6bc3">
+                <circle cx="12" cy="12" r="11" fill="currentColor"></circle>
+                <path d="M14.6548 6.5H9.34617C8.98953 6.5 8.70036 6.77492 8.70036 7.11427V12.4991C8.70036 12.8382 8.98953 13.1132 9.34617 13.1132H11.7936C11.7768 13.7122 11.5225 14.3691 11.1359 14.9432C10.7632 15.4965 10.1507 16.0415 9.81838 16.3021C9.80983 16.3089 9.80136 16.3154 9.79337 16.3217C9.72167 16.3871 9.66939 16.4632 9.66826 16.5686C9.66714 16.6486 9.71075 16.7105 9.75928 16.7761L9.77173 16.7896L11.4662 18.6074C11.4662 18.6074 11.549 18.6908 11.6175 18.7066C11.6948 18.7243 11.7823 18.7265 11.8429 18.6818C14.7987 16.5067 15.2256 13.7794 15.2999 12.3034C15.3001 12.295 15.3004 7.11427 15.3004 7.11427C15.3004 6.77492 15.0114 6.5 14.6548 6.5Z" fill="white"></path>
+              </svg>
+              </a>
+              
+              <a href="https://naver.me/51ckkDZh"  target="_blank" class="footer-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="css-8n6bc3">
+                <circle cx="12" cy="12" r="11" fill="currentColor"></circle>
+              <path d="M7.96631 5.76685H16.033V13.8335H7.96631V5.76685ZM12.5913 8.24889V9.81433L11.4126 8.24889H10.1381V11.3515H11.4082V9.78601L12.5872 11.3515H13.8612V8.24889H12.5913Z" fill="white"></path><path d="M7.96631 14.454H16.033L14.5204 16.3156H9.47869L7.96631 14.454Z" fill="white"></path><path d="M9.98281 16.9361H14.0161L11.9993 19.4181L9.98281 16.9361Z" fill="white"></path></svg>
+              <path d="M7.96631 5.76685H16.033V13.8335H7.96631V5.76685ZM12.5913 8.24889V9.81433L11.4126 8.24889H10.1381V11.3515H11.4082V9.78601L12.5872 11.3515H13.8612V8.24889H12.5913Z" fill="white"></path>
+              <path d="M7.96631 5.76685H16.033V13.8335H7.96631V5.76685ZM12.5913 8.24889V9.81433L11.4126 8.24889H10.1381V11.3515H11.4082V9.78601L12.5872 11.3515H13.8612V8.24889H12.5913Z" fill="white"></path>
+              <path d="M7.96631 14.454H16.033L14.5204 16.3156H9.47869L7.96631 14.454Z" fill="white"></path><path d="M9.98281 16.9361H14.0161L11.9993 19.4181L9.98281 16.9361Z" fill="white"></path></svg>
+              
+              </a>
+          </div>
+          <div class="last_6_container">
+            <p class="6_p">
+              Copyright 2014. bucketplace, Co, Ltd.All rights reserved.
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   </body>
