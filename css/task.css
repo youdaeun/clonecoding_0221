@@ -14,6 +14,7 @@ header {
   top: 0;
   z-index: 1;
   height: 100%;
+  cursor: pointer;
 }
 .header_container_1 {
   display: flex;
@@ -153,23 +154,35 @@ header {
   stroke: #333;
   fill: none;
 }
-
+.li_nav_container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid gainsboro;
+  height: 50%;
+}
 .li_nav {
   display: flex;
   flex-direction: row;
   text-align: center;
   align-items: center;
-  width: 78%;
   justify-content: center;
   border: 1px solid black;
+  width: 77%;
+  justify-content: flex-end;
 }
 .nav_ul {
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  color: black;
 }
 .nav_ul a {
   text-decoration: none;
+  cursor: pointer;
 }
 .nav_li {
   margin: 5px;
@@ -181,17 +194,78 @@ header {
   border: none;
   cursor: pointer;
 }
-
-.hidden_container:hover {
-  border: 1px solid black;
-  border-radius: 7px;
+.hidden_ul {
+  list-style-type: none;
 }
 .nav_best_container {
   border: 1px solid black;
   height: 30px;
 }
+
+/*main css*/
+
+.aside_container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+.asdie_action_1 {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  width: 78%;
+}
+.banner_side {
+  display: flex;
+  border: 1px solid black;
+}
+.banner_side_img {
+  width: 20px;
+  height: 20px;
+}
+.banner_wrap {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+.banner_ul {
+  display: flex;
+}
+.banner_ul_img {
+  width: 100px;
+  height: 100px;
+}
 .best_ul {
   list-style-type: none;
 }
 
-/*main css*/
+.aside_action_2 {
+  border: 1px solid black;
+}
+.cat_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.cat_ul {
+  display: flex;
+  list-style-type: none;
+  text-align: center;
+}
+.cat_ul a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav_ul a:hover {
+  text-decoration: solid;
+  color: skyblue;
+}
+.hidden_container:hover {
+  border: 1px solid black;
+  border-radius: 7px;
+}
