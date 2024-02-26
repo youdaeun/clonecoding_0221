@@ -1,0 +1,76 @@
+* {
+  background-color: rgb(244, 243, 243);
+}
+header,
+footer,
+main {
+  border: 1px solid black;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.main_container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.icon_container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.icon_img,
+.icon_img_a {
+  justify-content: center;
+  width: 70%;
+  display: flex;
+}
+.sign_form {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.sign_form input {
+  display: flex;
+  border-radius: 3px;
+  width: 260px;
+  height: 40px;
+  border: 1px solid gainsboro;
+  background-color: white;
+}
+.sign_text {
+  display: flex;
+  flex-direction: column;
+}
+.button_div {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 260px;
+  height: 40px;
+}
+.button01 {
+  background-color: skyblue;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+.sign_search {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+.sgin_serarch a {
+  text-decoration: none;
+}
