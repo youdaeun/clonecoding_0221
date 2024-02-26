@@ -382,15 +382,15 @@ header {
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 100%;
+  width: 80%;
   justify-content: center;
   margin-bottom: 100px;
+  margin: 0 auto;
 }
 .action_3_container {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
-  width: 78%;
 }
 .action_3_title_container {
   width: 100%;
@@ -402,6 +402,10 @@ header {
 .action_3_title {
 }
 .aside_title {
+  font-size: 20px;
+  display: block;
+  justify-content: left;
+  margin-bottom: 15px;
 }
 .plus_div {
 }
@@ -426,30 +430,48 @@ header {
 .todayplanning_container_1 {
   display: flex;
   flex-direction: row;
-  width: 88%;
+  width: 100%;
+  padding: 20px 0px;
   justify-content: space-between;
   align-items: center; /* 추가된 부분: 요소를 세로 중앙 정렬합니다. */
+  line-height: 1;
 }
 
 .todayplanning_title {
-  text-align: left; /* 왼쪽 정렬 */
+  flex: 1 1 0%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  min-width: 0px;
 }
 
 .todayplanning_plus {
   display: flex;
   justify-content: flex-end;
   align-items: center; /* 추가된 부분: 요소를 세로 중앙 정렬합니다. */
+  background-color: none;
+  margin-right: 20px;
 }
-
+.plus {
+  background: none;
+  border: none;
+  color: skyblue;
+  font-weight: bold;
+  font-size: 15px;
+}
 .today_2_ul {
   list-style: none; /* 리스트 마커 제거 */
   display: flex;
   flex-direction: row;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
 }
 
 .today_2_li_div_1 {
   display: flex;
   flex-direction: column;
+  margin: 0px 20px 0px 0px;
 }
 
 .today_2_li_div_container {
@@ -461,14 +483,13 @@ header {
 
 .today_2_li_img {
   align-self: flex-start; /* 이미지를 왼쪽으로 정렬합니다. */
-  border: 1px solid black;
   justify-content: center;
   display: flex;
   margin-bottom: 10px;
 }
 .today_li_img {
-  width: 70%;
-  border-radius: 7px;
+  width: 100%;
+  border-radius: 4px;
 }
 .today_p_container {
   margin-top: 10px; /* 이미지와의 간격 조정 */
@@ -477,6 +498,12 @@ header {
 .today_2_li_p1,
 .today_2_li_p2 {
   text-align: left; /* 텍스트 왼쪽 정렬 */
+  font-size: 12px;
+  font-weight: bold;
+}
+.today_2_li_p2 {
+  font-size: 15px;
+  margin-top: 5px;
 }
 .aside_action_5 {
   border: 1px solid black;
@@ -496,11 +523,40 @@ header {
   flex-direction: row;
   align-items: center;
   text-align: left;
+  justify-content: center;
 }
 .best_button_ul {
   border: 1px solid black;
   display: flex;
   list-style-type: none;
+}
+.best_button_li {
+  margin: 2px;
+  overflow: hidden;
+}
+.best_button {
+  border-radius: 20px;
+}
+.best_prev,
+.best_next {
+  position: absolute;
+  transform: translateY(100%);
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  box-shadow: 2px gainsboro;
+  border-radius: 100%;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 30px;
+}
+
+.best_prev {
+  left: 0;
+}
+.best_next {
+  right: 0;
 }
 .aside_last_best {
   border: 1px solid black;
@@ -523,6 +579,7 @@ footer {
   background-color: rgb(244, 244, 244);
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 .footer_container {
   border: 1px solid black;
@@ -531,24 +588,78 @@ footer {
   text-align: center;
   justify-content: center;
   align-items: center;
-  width: 88%;
-  height: 100%;
+  width: 80%;
+  height: 60%;
 }
 .center_container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  height: 100%;
   border: 1px solid black;
 }
 .center_h4 {
-  border: 1px solid black;
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.call_time1 {
+  text-align: left;
+  margin: 7px;
+}
+.center_call {
+  font-weight: bold;
+  font-size: 15px;
+}
+.center_time1 {
+  font-size: 13px;
+  align-items: center;
+  color: gray;
+}
+.center_ul_div {
+  text-align: left;
+  margin-left: 20px;
+  font-size: 10px;
+  width: 70%;
 }
 .site_list_container {
-  border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
   width: 20%;
   height: 20%;
+  border: 1px solid black;
 }
+.site_list_ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.center_ul {
+  list-style-type: none;
+}
+.center_ul::before {
+  margin-left: 20px;
+  content: ·;
+  font-size: small;
+}
+.center_span {
+  border: 1px solid gray;
+  margin-top: 20px;
+  width: 58%;
+  margin-left: 10px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+.center_span_1 {
+  border: 1px solid gray;
+  margin-top: 20px;
+  width: 30%;
+  margin-left: 10px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
 .site_list_ul {
   display: flex;
   flex-direction: column;
