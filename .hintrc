@@ -12,7 +12,8 @@
     "axe/name-role-value": [
       "default",
       {
-        "link-name": "off"
+        "link-name": "off",
+        "button-name": "off"
       }
     ],
     "disown-opener": "off",
@@ -22,6 +23,7 @@
       {
         "listitem": "off"
       }
-    ]
+    ],
+    "no-inline-styles": "off"
   }
 }
