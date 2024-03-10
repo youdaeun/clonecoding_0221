@@ -13,7 +13,8 @@
       "default",
       {
         "link-name": "off",
-        "button-name": "off"
+        "button-name": "off",
+        "input-button-name": "off"
       }
     ],
     "disown-opener": "off",
@@ -24,6 +25,13 @@
         "listitem": "off"
       }
     ],
-    "no-inline-styles": "off"
+    "no-inline-styles": "off",
+    "axe/forms": [
+      "default",
+      {
+        "label": "off",
+        "select-name": "off"
+      }
+    ]
   }
 }
