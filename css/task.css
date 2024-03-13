@@ -4,6 +4,15 @@
 }
 header {
   background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 .header_container {
   display: flex;
@@ -18,13 +27,20 @@ header {
   width: 100%;
   background-color: white;
 }
+
 .header_container_1 {
   display: flex;
   flex-direction: row;
+  top: 0;
+  left: 0;
+  right: 0;
+  flex-direction: row;
+  z-index: 10;
   text-align: center;
   align-items: center;
   width: 78%;
   justify-content: flex-end;
+  background-color: white;
 }
 /*오늘의 집 홈으로 갈 수 있는 아이콘*/
 .icon_container {
@@ -307,7 +323,7 @@ header {
 
 /*main css*/
 /* Common styles */
-.aside-container {
+.main-container-1 {
   width: 80%;
   display: flex;
   justify-content: center;
