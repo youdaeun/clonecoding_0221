@@ -4,22 +4,18 @@
 }
 header {
   background-color: white;
+
+  border: 3px solid blue;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-header.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
+
 .header_container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   border-bottom: 1px solid gainsboro;
-  position: sticky;
   top: 0;
   z-index: 1;
   height: 100%;
@@ -59,6 +55,7 @@ header.fixed {
 
 /*커뮤니티, 쇼핑, 인테리어/생활 카테고리*/
 .header_ct1 {
+  border: 3px solid red;
   display: flex;
   flex-direction: row;
   margin-right: 100px;
@@ -94,11 +91,10 @@ header.fixed {
   border: 1px solid gainsboro;
   border-radius: 7px;
   align-items: center;
-  height: 50%;
+  height: 100%;
   width: 80%;
   color: gainsboro;
   font-size: 14px;
-  padding-left: 50px;
 }
 
 .search-bar svg {
@@ -120,6 +116,7 @@ header.fixed {
   height: 80%;
 }
 .sign_container {
+  border: 3px solid red;
   display: flex;
   height: 100%;
   justify-content: center;
@@ -322,7 +319,6 @@ header.fixed {
 }
 
 /*main css*/
-/* Common styles */
 .main-container-1 {
   width: 80%;
   display: flex;
